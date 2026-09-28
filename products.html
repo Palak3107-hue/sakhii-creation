@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochet Creations - Products</title>
+    <!-- Google Fonts for Aesthetic Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .insta-banner {
+    background: linear-gradient(135deg, #f5e4dc, #fce8e6);
+    color: #63473c;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #ebd4cc;
+}
+.insta-banner a {
+    color: #b05a6e;
+    text-decoration: none;
+    font-weight: 600;
+}
+.insta-banner a:hover {
+    text-decoration: underline;
+}
+        .whatsapp-tooltip-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9999;
+}
+.whatsapp-bubble {
+    background: #fff;
+    color: #63473c;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: bounceBubble 2s infinite;
+    white-space: nowrap;
+}
+@keyframes bounceBubble {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+        /* Smooth Scrolling for entire website */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Pink Text Selection Highlight */
+::selection {
+    background-color: #f5e4dc;
+    color: #63473c;
+}
+        .wishlist-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.wishlist-btn:hover { transform: scale(1.1); }
+.wishlist-btn.active { color: #e63946; }
+        #backToTopBtn {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background-color: #b05a6e;
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+#backToTopBtn:hover {
+    transform: scale(1.1);
+}
+        /* General Styling */
+        /* Dark Mode Colors */
+body.dark-mode {
+    background-color: #241c18 !important;
+    color: #f7ede2 !important;
+}
+body.dark-mode .navbar, 
+body.dark-mode .polaroid-card, 
+body.dark-mode .product-card {
+    background-color: #332822 !important;
+    color: #f7ede2 !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+body.dark-mode .polaroid-title, 
+body.dark-mode .hero h1, 
+body.dark-mode .logo {
+    color: #f7ede2 !important;
+}
+body.dark-mode .hero p {
+    color: #d1b7a7 !important;
+}
+
+/* Toggle Button Styling */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s;
+    margin-left: 15px;
+}
+.theme-toggle-btn:hover {
+    transform: scale(1.2);
+}
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcf4ee;
+            color: #4a3b32;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: #b05a6e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+
+        .nav-links li a:hover, .nav-links li a.active {
+            color: #b05a6e;
+        }
+
+        /* Products Page Header */
+        .products-header {
+            text-align: center;
+            margin: 40px 20px 20px;
+        }
+
+        .products-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-style: italic;
+            color: #3b2a22;
+            margin-bottom: 5px;
+        }
+
+        .products-header p {
+            font-size: 14px;
+            color: #8c7365;
+            letter-spacing: 1px;
+        }
+
+        /* Product Grid Container */
+        .products-grid {
+            max-width: 1000px;
+            margin: 30px auto 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        /* Polaroid Style Product Card */
+        .product-card {
+            background: #ffffff;
+            padding: 15px 15px 20px;
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px) rotate(0deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #3b2a22;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 15px;
+            color: #b05a6e;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .order-btn {
+            display: inline-block;
+            background-color: #f5e4dc;
+            color: #63473c;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #b05a6e;
+            color: #ffffff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4a3b32;
+            color: #fcf4ee;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            margin-top: 40px;
+        }
+        
+        /* Custom Heart Cursor */
+.cursor-heart {
+    position: fixed;
+    pointer-events: none;
+    font-size: 16px;
+    color: #b05a6e;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    z-index: 9999;
+    animation: fadeInOut 0.8s forwards;
+}
+
+
+@keyframes fadeInOut {
+    0% { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+    100% { opacity: 0; transform: scale(0.5) translate(-50%, -120%); }
+}
+
+/* Floating WhatsApp Chat Widget */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Product cards tilt effect (Products page mate j jaruri chhe) */
+.product-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(176,90,110,0.15);
+}
+    </style>
+</head>
+<body>
+    <script>
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+</script>
+    <button id="backToTopBtn" onclick="scrollToTop()" title="Back to Top">↑</button>
+
+<script>
+    window.onscroll = function() {
+        let btn = document.getElementById('backToTopBtn');
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+<div style="background: #f5e4dc; color: #63473c; padding: 8px 0; overflow: hidden; white-space: nowrap; font-size: 13px; font-weight: 500; border-bottom: 1px solid #ebd4cc;">
+    <div style="display: inline-block; animation: tickerMove 25s linear infinite;">
+        ✨ Custom orders are open! DM on WhatsApp to book yours 🧶 &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 100% Handmade with Pure Love ♥ &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; Worldwide Shipping Available ✨
+    </div>
+</div>
+
+<style>
+@keyframes tickerMove {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+</style>
+<div class="insta-banner">
+    ✨ Join our crochet family on Instagram: <a href="https://instagram.com/shakiii_creation" target="_blank">@shakiii_creation</a> ♥
+</div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="in.html" class="logo">
+            <img src="logo.jpg" alt="Logo"> 
+            Crochet Creations
+        </a>
+        <ul class="nav-links">
+            <li><a href="in.html">Home</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+<button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode">☀️</button>
+    <!-- Header -->
+    <div class="products-header">
+        <h1>Handmade Collection</h1>
+        <p>Explore our cute aesthetic crochet art, crafted with pure love ♥</p>
+    </div>
+<div style="text-align:center; margin: 25px 0;">
+    <input type="text" id="productSearchInput" onkeyup="searchProducts()" placeholder="🔍 Search crochet products (e.g. Bow, Bouquet)..." style="width: 80%; max-width: 400px; padding: 12px 20px; border: 1px solid #ebd4cc; border-radius: 30px; font-size: 14px; outline: none; background: #fff; color: #63473c; box-shadow: 0 3px 10px rgba(0,0,0,0.03);">
+</div>
+    <!-- Products Grid -->
+    <div class="products-grid">
+        
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="boww.jpg" alt="Crochet Bows">
+            <div class="product-title">Cute Hair Bows</div>
+            <div class="product-price">₹80</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Cute%20Hair%20Bows" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="hair.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Crochet  Hair Clip</div>
+            <div class="product-price">₹100</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+</div>  
+  <!-- Product 3 -->
+        <div class="product-card">
+            <img src="coster.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Aesthetic Crochet Coaster(each one)</div>
+            <div class="product-price">₹100</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+          <!-- Product 4 -->
+        <div class="product-card">
+            <img src="bunny.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Lullaby Bunny</div>
+            <div class="product-price">₹500</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+</div>
+  <!-- Product 5-->
+        <div class="product-card">
+            <img src="bookmark.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Handmade Crochet Peacock Feather Bookmark</div>
+            <div class="product-price">₹100</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+</div>
+  <!-- Product 6 -->
+        <div class="product-card">
+            <img src="dress.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Handmade Laddugopal Designer Dress</div>
+            <div class="product-price">₹350</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+
+</div>
+  <!-- Product 7 -->
+        <div class="product-card">
+            <img src="evil keychain.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Evil Eye Crochet Keychain</div>
+            <div class="product-price">₹110</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+</div>
+  <!-- Product 8 -->
+        <div class="product-card">
+            <img src="hart.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Little Love Hert Charm</div>
+            <div class="product-price">₹120</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+</div>
+  <!-- Product 9 -->
+        <div class="product-card">
+            <img src="flower coster.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Crochet Flower Coaster(each one)</div>
+            <div class="product-price">₹150</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+</div>
+        <!-- Product 10 -->
+        <div class="product-card">
+            <img src="hair bow.jpg" alt="cute toy">
+            <div class="product-title">Handmade Crochet Tulip Clip</div>
+            <div class="product-price">₹150</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Mini%20Keychain" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+          <!-- Product 11 -->
+        <div class="product-card">
+            <img src="evil put.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Evil  Eye Crochet Desk Decor</div>
+            <div class="product-price">₹270</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 12 -->
+        <div class="product-card">
+            <img src="alph.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Custom Letter Crochet Keyring</div>
+            <div class="product-price">₹120</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 13 -->
+        <div class="product-card">
+            <img src="mini bag.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Cute Floral Crochet Sling Bag</div>
+            <div class="product-price">₹300</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 14 -->
+        <div class="product-card">
+            <img src="evil2.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Protective Evil Eye Decor</div>
+            <div class="product-price">₹100</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 15-->
+        <div class="product-card">
+            <img src="rose.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Everlasting Red Rose</div>
+            <div class="product-price">₹200</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 16 -->
+        <div class="product-card">
+            <img src="keychain.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Crochet Flower basket Keyring</div>
+            <div class="product-price">₹170</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 17 -->
+        <div class="product-card">
+            <img src="hello cute.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Bow Aesthetic Crochet Keyring(each one)</div>
+            <div class="product-price">₹150</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 18 -->
+        <div class="product-card">
+            <img src="morphankh.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Divine Peacock Feather Charm</div>
+            <div class="product-price">₹110</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 19 -->
+        <div class="product-card">
+            <img src="small.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Chubby Bunny Amiguurumi</div>
+            <div class="product-price">₹250</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 19 -->
+        <div class="product-card">
+            <img src="sunflower bow.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Sunflower Hair Accessory</div>
+            <div class="product-price">₹180</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 20 -->
+        <div class="product-card">
+            <img src="pag.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Cute Little Penguin Keyring(each one)</div>
+            <div class="product-price">₹200</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 21 -->
+        <div class="product-card">
+            <img src="tulip.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Mini Tulip Flower Wrap</div>
+            <div class="product-price">₹180</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 22 -->
+        <div class="product-card">
+            <img src="lotus.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Lotus Petal Aesthetic Hair Clip</div>
+            <div class="product-price">₹130</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+           <!-- Product 23 -->
+        <div class="product-card">
+            <img src="sunflower.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Handmade Sunflower Coaster</div>
+            <div class="product-price">₹150</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+            <!-- Product 24 -->
+        <div class="product-card">
+            <img src="panda.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Cute Littel Panda Soft Toy</div>
+            <div class="product-price">₹500</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+            <!-- Product 25 -->
+        <div class="product-card">
+            <img src="star.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Crochet Smiling Star Keychain</div>
+            <div class="product-price">₹140</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+            <!-- Product 26 -->
+        <div class="product-card">
+            <img src="tulip2.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Gift Floral Arrangement Charm</div>
+            <div class="product-price">₹350</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+            <!-- Product 27  -->
+        <div class="product-card">
+            <img src="sunflower put.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Everlasting Sunflower Pot</div>
+            <div class="product-price">₹250</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+            <!-- Product 28 -->
+        <div class="product-card">
+            <img src="lily.jpg" alt="Crochet Bouquet">
+            <div class="product-title">Elegant Crochet Lily Stem</div>
+            <div class="product-price">₹180</div>
+            <a href="https://wa.me/9913430903?text=Hello,%20I%20want%20to%20order%20Aesthetic%20Flower%20Bouquet" class="order-btn" target="_blank">Order on WhatsApp ♥</a>
+       <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+<script>
+    function toggleWishlist(btn) {
+        if(btn.innerHTML === '♡') {
+            btn.innerHTML = '♥';
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = '♡';
+            btn.classList.remove('active');
+        }
+    }
+</script>
+        </div>
+
+<script>
+    function searchProducts() {
+        let input = document.getElementById('productSearchInput').value.toLowerCase();
+        let cards = document.querySelectorAll('.product-card');
+        
+        cards.forEach(card => {
+            let text = card.textContent.toLowerCase();
+            if(text.includes(input)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+    </div>
+       
+        
+
+       
+       
+
+    <!-- Footer -->
+    <footer>
+    <p> <span id="currentYear"></span> Crochet Creations. All rights reserved. ♥</p>
+</footer>
+
+<script>
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+</script>
+   
+    <!-- Floating WhatsApp Button -->
+<div class="whatsapp-tooltip-container">
+    <div class="whatsapp-bubble">Chat with Creator 🌸</div>
+    <a href="https://wa.me/9913430903" target="_blank" style="background:#25d366; color:#fff; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+        💬
+    </a>
+</div>
+
+<!-- Heart Cursor Script -->
+<script>
+    document.addEventListener('mousemove', function(e) {
+        if (Math.random() < 0.2) {
+            let heart = document.createElement('div');
+            heart.className = 'cursor-heart';
+            heart.innerHTML = '♥';
+            heart.style.left = e.pageX + 'px';
+            heart.style.top = e.pageY + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 800);
+        }
+    });
+    
+</script>
+<!-- Lightbox Modal Box -->
+<div id="imageLightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center; cursor:pointer;" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" style="max-width:80%; max-height:80%; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+</div>
+
+<!-- Lightbox Script -->
+<script>
+    // Badha product images par click event lagavo
+    document.querySelectorAll('.product-card img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.click(function(){}); // fallback
+        img.addEventListener('click', function() {
+            document.getElementById('lightboxImg').src = this.src;
+            document.getElementById('imageLightbox').style.display = 'flex';
+        });
+    });
+
+    function closeLightbox() {
+        document.getElementById('imageLightbox').style.display = 'none';
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+        let btn = document.querySelector('.theme-toggle-btn');
+        if(document.body.classList.contains('dark-mode')) {
+            btn.innerHTML = '🌙';
+        } else {
+            btn.innerHTML = '☀️';
+        }
+    }
+</script>
+
+</body>
+</html>
